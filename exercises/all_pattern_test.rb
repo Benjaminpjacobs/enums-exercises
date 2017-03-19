@@ -43,51 +43,73 @@ class AllPatternTest < Minitest::Test
   end
 
   def test_all_empty
-    skip
+    # skip
     strings = ["", "", "", "", "", "", ""]
-    # Your code goes here
+    all_empty = true
+    strings.each do |string|
+      all_empty = false if !string.empty?
+    end
     assert all_empty
   end
 
   def test_not_all_empty
-    skip
+    # skip
     strings = ["", "", "", "full", "", "", ""]
-    # Your code goes here
+    all_empty = true
+    strings.each do |string|
+      all_empty = false if !string.empty?
+    end
     refute all_empty
   end
 
   def test_not_all_uppercase
-    skip
+    # skip
     words = ["DOUGHNUT", "CASH", "MAIN", "bOWl", "SMACK", "SAND"]
-    # Your code goes here
+    all_caps = true
+    words.each do |word|
+      all_caps = false if word != word.upcase
+    end
     refute all_caps
   end
 
   def test_all_lies
-    skip
+    # skip
     lies = [false, false, false, false]
-    # Your code goes here
+    all_lies = true
+    lies.each do |lie|
+      all_lies = false if lie
+    end
     assert all_lies
   end
 
   def test_all_multiples_of_7
-    skip
+    # skip
     numbers = [42, 14, 35, 49, 28, 56, 21, 7]
-    # Your code goes here
+    all_multiples_of_7 = true
+    numbers.each do |number|
+      all_multiples_of_7 = false if number % 7 != 0
+    end
     assert all_multiples_of_7
   end
 
   def test_not_all_3_digits_long
-    skip
+    # skip
     numbers = [981, 831, 509, 332, 892, 8999, 110]
-    # Your code goes here
+    all_3_digits = true
+    numbers.each do |number|
+      all_3_digits = false if numbers.to_s.length != 3
+    end
+    
     refute all_3_digits
   end
 
   def test_all_4_letter_words
-    skip
+    # skip
     words = ["love", "hate", "fire", "bird", "call"]
-    # Your code goes here
+    all_4_letters = true
+    words.each do |word|
+      all_4_letters = false if word.length != 4
+    end
     assert all_4_letters
   end
 
